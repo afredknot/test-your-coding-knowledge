@@ -1,0 +1,26 @@
+:root{
+  --color: black;
+  --flex-direction: column;
+  --justify-content:center;
+  --padding: 10px;
+}
+
+head, h1{
+  display: inline-flex;
+  flex: auto;
+  justify-content: var(--justify-content);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: darkslateblue;
+
+}
+
+
+
+body{
+  display:flex;
+ flex-direction: row;
+ box-sizing: content-box;
+  justify-content: space-around;
+  align-items:flex-start;
+}
+  
