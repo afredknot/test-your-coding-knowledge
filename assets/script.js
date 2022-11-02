@@ -3,12 +3,14 @@ var startButton = document.querySelector('#start');
 var selector = document.querySelector('#input-group');
 var timerEl = document.querySelector('.timer-count');
 var hidden = document.querySelector('#questions-card');
+var submit = document.querySelector('.submit-name')
 var enterText = document.getElementById('questions');
 var button1 = document.getElementById('1');
 var button2 = document.getElementById('2');
 var button3 = document.getElementById('3');
 var button4 = document.getElementById('4');
 var currentQuestion = 0;
+var nameInput = document.querySelector('#name')
 var winCount = 0;
 var loseCount = 0;
 var isWin = false;
@@ -17,10 +19,8 @@ var timer;
 
 const question = document.getElementById('questions');
 
-function init() {
-  getWins();
-  getLoss();
-}
+
+
 // quiz questions
 var questions = [
   {
@@ -58,20 +58,17 @@ hidden.setAttribute('style', 'visibility:hidden');
 // starting the timer
 var startTimer = function () {
   timer = setInterval(function () {
-    timerCount--;
     timerEl.textContent = timerCount;
-    if (timerCount >= 0) {
+    if (timerCount >= 1) {
+      timerCount--;
       if (isWin && timerCount > 0) {
         clearInterval(timerEl);
-        winQuiz();
       }
-    }
-
-    if (timerCount == 0) {
+    } else if (timerCount === 0) {
       clearInterval(timerEl);
-      loseQuiz();
     }
   }, 1000);
+  return;
 };
 // starting the quiz
 var startQuiz = function () {
@@ -115,33 +112,65 @@ function deciding(answer, correctAnswer) {
   if (answer === correctAnswer) {
     displayMessage('Correct, good job!');
     isWin = true;
+    winCount += 1;
   }
   if (answer != correctAnswer) {
     displayMessage('Incorrect, try again next time.');
     isWin = false;
     timerCount = timerCount - 7;
   }
-  if (currentQuestion === questions.length-1) {
-    resetQuiz();
+  if (currentQuestion === questions.length - 1) {
+    timerCount = 0;
+    quizEnd();
   } else {
     currentQuestion++;
     showQuestion();
   }
 }
 
-function logAnswer(event) {
+function showScores(event) {
   event.preventDefault();
-  localStorage.setItem('wins', (isWin = true));
-  localStorage.setItem('lose', (isWin = false));
+  console.log(event);
+  localStorage.setItem('win', JSON.stringify);
+  localStorage.setItem('lose', JSON.stringify);
   answer.textcontent();
+};
+
+
+ 
+  var userNameSubmit = function(){     
+   submit.addEventListener("click", function(event) {      
+    event.preventDefault();    
+    var newScore = {            
+    userName: nameInput.value.trim(),          
+     userScore: winCount        
+     };     
+     highScores.push(newScore);
+     highScores.sort((a, b) => b.userScore - a.userScore);
+     highScores.splice(numHighScores);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    // window.location.href = '/highscore.html'; 
+     });
+  };     
+
+var numHighScores = 5;
+var highScores = JSON.parse(localStorage.getItem('highscores')) ??[];
+function quizEnd(){
+  userNameSubmit();
+
 }
 
+var renderHighScore
+
 function resetQuiz() {
+  if (timerCount == 0)
+  
   winCount = 0;
   loseCount = 0;
   setWins();
   setLoss();
 }
+
 function answer1click() {
   var thisQuestion = questions[currentQuestion];
   var correctAnswer = thisQuestion.correctAnswer;
