@@ -25,3 +25,7 @@ THEN I can save my initials and score
 learned better how to call arrays and get them into a container
 better learning on how to print to the console
 got more comfortable with javascript in general
+
+## deployed page & screenshot
+https://afredknot.github.io/test-your-coding-knowledge/
+![screenshot](./assets/img/screenshot.png)
