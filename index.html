@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Let's test your knowledge</title>
-  <link rel="stylesheet" href="./assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's test your knowledge</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <header>
+    <a href="./highscore.html" id="highscore" alt="highscore page link in upper left corner">View Highscores</a>
 
-</head>
-<header>
-<h1>Test your JavaScript knowledge</h1>
- 
-</header>
-<body>
+    <div class="card timer">
+      <div class="timer-count">50</div>
+      <h3>seconds remaining</h3>
+    </div>
+  </header>
+  <body>
+    <h1>Test your JavaScript knowledge</h1>
+    <p>
+      How is you knoweldge on how JavaScript works and do you have what it takes
+      to answer all the questions before the time runs out? If you think you do
+      then click the start button to continue.
+    </p>
+    <div id="start">
+      <button>start</button>
+    </div>
 
- <a href="./highscore.html">View Highscores</a> 
-   
-</body>
-<link rel="stylesheet" href="./assets/script.js">
+    <div id="questions-card">
+      <h2 id="questions" >this is where the question goes</h2>
+      <button id="1">here is the text</button>
+      <button id="2">here is the text</button>
+      <button id="3">here is the text</button>
+      <button id="4">here is the text</button>
+    </div>
+    <div class="input-group"></div>
+  </body>
+  <script src="./assets/script.js"></script>
 </html>

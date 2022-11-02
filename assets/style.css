@@ -5,21 +5,52 @@
   --padding: 10px;
 }
 
-head, h1{
-  display: inline-flex;
+body{
+  flex: auto;
   justify-content: var(--justify-content);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: darkslateblue;
 
 }
 
+h1{
+  display: flex;
+  flex: auto;
+  justify-content: center;
+ align-items: center;
+ flex-direction: column;
+  height: 200px ;
+  width:auto
+
+}
 
 
 header{
   display:flex;
- flex-direction: row;
- box-sizing: content-box;
+ flex-direction:row;
+ box-sizing: border-box;
   justify-content: space-around;
-  align-items:flex-start;
+  align-items:center;
+  padding:5px;
 }
+header div{
+  flex-direction:row;
+}
+p {
+  text-align: center;
+}
+ .start{
+  
+align-self: center;
+padding:20px;
+ }
+
+ #questions-card{
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  align-self: center;
+  padding: 20px;
+  margin:60px;
  
+}
