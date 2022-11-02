@@ -53,6 +53,7 @@ var questions = [
     correctAnswer: 'console.log',
   },
 ];
+// 
 console.log(questions);
 hidden.setAttribute('style', 'visibility:hidden');
 // starting the timer
@@ -81,15 +82,6 @@ var startQuiz = function () {
   hidden.setAttribute('style', 'visibility:visible');
   showQuestion();
 };
-
-// function countDown(num) {
-//   for (var i = num; i > 0; i--) {
-//     console.log(i);
-//   }
-// }
-
-// for (var questions = [i] +)
-// const quest = JSON.parse(question);
 
 // questions and answers to be printed to the
 function showQuestion() {
